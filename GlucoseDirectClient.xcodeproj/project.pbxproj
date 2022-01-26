@@ -8,34 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		06E10A172360DBCC009B6FED /* LoopKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38E30FCC2358C28900DAB3A0 /* LoopKit.framework */; platformFilter = ios; };
-		06E10A192360DBCE009B6FED /* NightscoutAPIClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F61399234F3066003FB95D /* NightscoutAPIClient.framework */; platformFilter = ios; };
+		06E10A192360DBCE009B6FED /* GlucoseDirectClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F61399234F3066003FB95D /* GlucoseDirectClient.framework */; platformFilter = ios; };
 		384D8F1123608C8100B1DD29 /* LoopKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38E30FD02358C29700DAB3A0 /* LoopKitUI.framework */; platformFilter = ios; };
-		38589848235DA80E00919FD4 /* NightscoutAPIManager+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38589847235DA80E00919FD4 /* NightscoutAPIManager+UI.swift */; };
-		38589850235E027500919FD4 /* NightscoutAPISetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3858984F235E027500919FD4 /* NightscoutAPISetupViewController.swift */; };
-		38589852235E035D00919FD4 /* NightscoutAPISettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38589851235E035D00919FD4 /* NightscoutAPISettingsViewController.swift */; };
-		3858985E235E074600919FD4 /* NightscoutAPIService+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3858985D235E074600919FD4 /* NightscoutAPIService+UI.swift */; };
+		38589848235DA80E00919FD4 /* GlucoseDirectManager+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38589847235DA80E00919FD4 /* GlucoseDirectManager+UI.swift */; };
+		38589852235E035D00919FD4 /* GlucoseDirectSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38589851235E035D00919FD4 /* GlucoseDirectSettingsViewController.swift */; };
 		3858985F235E07CC00919FD4 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F613BD234F3E83003FB95D /* LocalizedString.swift */; };
 		38589860235E07D500919FD4 /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FA78D22350C80600780D61 /* TimeInterval.swift */; };
 		3897846124290961008AD57A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3897846324290961008AD57A /* Localizable.strings */; };
 		38B66F7023C4B96A009594BB /* DispatchTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B66F6F23C4B96A009594BB /* DispatchTimer.swift */; };
 		38D2F4FD235A12AD004FFE14 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D2F4FC235A12AD004FFE14 /* SettingsView.swift */; };
-		38D9A64D2413C0D30099AAF0 /* KalmanFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D9A6492413C0D30099AAF0 /* KalmanFilter.swift */; };
-		38D9A64E2413C0D30099AAF0 /* KalmanFilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D9A64A2413C0D30099AAF0 /* KalmanFilterType.swift */; };
-		38D9A6502413C0D30099AAF0 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D9A64C2413C0D30099AAF0 /* DoubleExtension.swift */; };
-		38E30FC52358C25100DAB3A0 /* NightscoutAPIClientUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 38E30FB72358C25000DAB3A0 /* NightscoutAPIClientUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		38F613A3234F3067003FB95D /* NightscoutAPIClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F61399234F3066003FB95D /* NightscoutAPIClient.framework */; };
-		38F613A8234F3067003FB95D /* NightscoutAPIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F613A7234F3067003FB95D /* NightscoutAPIClientTests.swift */; };
-		38F613AA234F3067003FB95D /* NightscoutAPIClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 38F6139C234F3066003FB95D /* NightscoutAPIClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38E30FC52358C25100DAB3A0 /* GlucoseDirectClientUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 38E30FB72358C25000DAB3A0 /* GlucoseDirectClientUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38F613AA234F3067003FB95D /* GlucoseDirectClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 38F6139C234F3066003FB95D /* GlucoseDirectClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		38F613B7234F333C003FB95D /* LoopKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F613B6234F333C003FB95D /* LoopKit.framework */; platformFilter = ios; };
-		38F613B9234F33B1003FB95D /* NightscoutAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F613B8234F33B1003FB95D /* NightscoutAPIManager.swift */; };
+		38F613B9234F33B1003FB95D /* GlucoseDirectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F613B8234F33B1003FB95D /* GlucoseDirectManager.swift */; };
 		38F613BB234F3AD1003FB95D /* BloodGlucose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F613BA234F3AD1003FB95D /* BloodGlucose.swift */; };
 		38F613BE234F3E83003FB95D /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F613BD234F3E83003FB95D /* LocalizedString.swift */; };
-		38F613C0234F401F003FB95D /* NightscoutAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F613BF234F401F003FB95D /* NightscoutAPIService.swift */; };
-		38F613C2234F7FB9003FB95D /* NightscoutAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F613C1234F7FB9003FB95D /* NightscoutAPIClient.swift */; };
+		38F613C2234F7FB9003FB95D /* GlucoseDirectClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F613C1234F7FB9003FB95D /* GlucoseDirectClient.swift */; };
 		38FA78D32350C80600780D61 /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FA78D22350C80600780D61 /* TimeInterval.swift */; };
 		38FEB836236082B900F1E810 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FEB835236082B900F1E810 /* HealthKit.framework */; platformFilter = ios; };
 		A901264F26D95DFB0081BAD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A901264E26D95DFB0081BAD1 /* Assets.xcassets */; };
-		A9BAC74426CDBBB4001C9493 /* NightscoutAPIClientPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BAC74326CDBBB4001C9493 /* NightscoutAPIClientPlugin.swift */; };
+		A9BAC74426CDBBB4001C9493 /* GlucoseDirectClientPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BAC74326CDBBB4001C9493 /* GlucoseDirectClientPlugin.swift */; };
 		A9BAC74626CDC3AA001C9493 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BAC74526CDC3AA001C9493 /* Bundle.swift */; };
 		A9BAC74926CDC3CD001C9493 /* OSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BAC74726CDC3B3001C9493 /* OSLog.swift */; };
 		A9BAC74A26CDC565001C9493 /* OSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BAC74726CDC3B3001C9493 /* OSLog.swift */; };
@@ -47,70 +39,53 @@
 			containerPortal = 38F61390234F3066003FB95D /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 38F61398234F3066003FB95D;
-			remoteInfo = NightscoutAPIClient;
-		};
-		38F613A4234F3067003FB95D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 38F61390234F3066003FB95D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 38F61398234F3066003FB95D;
-			remoteInfo = NightscoutAPIClient;
+			remoteInfo = GlucoseDirectClient;
 		};
 		A9BAC73E26CDB821001C9493 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 38F61390234F3066003FB95D /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 38F61398234F3066003FB95D;
-			remoteInfo = NightscoutAPIClient;
+			remoteInfo = GlucoseDirectClient;
 		};
 		A9BAC74026CDB821001C9493 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 38F61390234F3066003FB95D /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 38E30FB42358C25000DAB3A0;
-			remoteInfo = NightscoutAPIClientUI;
+			remoteInfo = GlucoseDirectClientUI;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		384D8F0A23608A4400B1DD29 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS6.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		384D8F0D23608BEA00B1DD29 /* LoopKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LoopKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		38589847235DA80E00919FD4 /* NightscoutAPIManager+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NightscoutAPIManager+UI.swift"; sourceTree = "<group>"; };
-		3858984F235E027500919FD4 /* NightscoutAPISetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutAPISetupViewController.swift; sourceTree = "<group>"; };
-		38589851235E035D00919FD4 /* NightscoutAPISettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutAPISettingsViewController.swift; sourceTree = "<group>"; };
+		38589847235DA80E00919FD4 /* GlucoseDirectManager+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GlucoseDirectManager+UI.swift"; sourceTree = "<group>"; };
+		38589851235E035D00919FD4 /* GlucoseDirectSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseDirectSettingsViewController.swift; sourceTree = "<group>"; };
 		38589853235E051500919FD4 /* LoopUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LoopUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3858985D235E074600919FD4 /* NightscoutAPIService+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NightscoutAPIService+UI.swift"; sourceTree = "<group>"; };
 		3897846224290961008AD57A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3897846424290997008AD57A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		38B66F6F23C4B96A009594BB /* DispatchTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchTimer.swift; sourceTree = "<group>"; };
 		38D2F4FC235A12AD004FFE14 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		38D9A6492413C0D30099AAF0 /* KalmanFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KalmanFilter.swift; sourceTree = "<group>"; };
-		38D9A64A2413C0D30099AAF0 /* KalmanFilterType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KalmanFilterType.swift; sourceTree = "<group>"; };
-		38D9A64C2413C0D30099AAF0 /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
-		38E30FB52358C25000DAB3A0 /* NightscoutAPIClientUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NightscoutAPIClientUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		38E30FB72358C25000DAB3A0 /* NightscoutAPIClientUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NightscoutAPIClientUI.h; sourceTree = "<group>"; };
+		38E30FB52358C25000DAB3A0 /* GlucoseDirectClientUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GlucoseDirectClientUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38E30FB72358C25000DAB3A0 /* GlucoseDirectClientUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlucoseDirectClientUI.h; sourceTree = "<group>"; };
 		38E30FB82358C25000DAB3A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38E30FCC2358C28900DAB3A0 /* LoopKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LoopKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38E30FD02358C29700DAB3A0 /* LoopKitUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LoopKitUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		38F61399234F3066003FB95D /* NightscoutAPIClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NightscoutAPIClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		38F6139C234F3066003FB95D /* NightscoutAPIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NightscoutAPIClient.h; sourceTree = "<group>"; };
+		38F61399234F3066003FB95D /* GlucoseDirectClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GlucoseDirectClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38F6139C234F3066003FB95D /* GlucoseDirectClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlucoseDirectClient.h; sourceTree = "<group>"; };
 		38F6139D234F3066003FB95D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		38F613A2234F3067003FB95D /* NightscoutAPIClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NightscoutAPIClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		38F613A7234F3067003FB95D /* NightscoutAPIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutAPIClientTests.swift; sourceTree = "<group>"; };
-		38F613A9234F3067003FB95D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38F613B3234F313A003FB95D /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		38F613B6234F333C003FB95D /* LoopKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LoopKit.framework; path = Carthage/Build/iOS/LoopKit.framework; sourceTree = "<group>"; };
-		38F613B8234F33B1003FB95D /* NightscoutAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutAPIManager.swift; sourceTree = "<group>"; };
+		38F613B8234F33B1003FB95D /* GlucoseDirectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseDirectManager.swift; sourceTree = "<group>"; };
 		38F613BA234F3AD1003FB95D /* BloodGlucose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodGlucose.swift; sourceTree = "<group>"; };
 		38F613BD234F3E83003FB95D /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
-		38F613BF234F401F003FB95D /* NightscoutAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutAPIService.swift; sourceTree = "<group>"; };
-		38F613C1234F7FB9003FB95D /* NightscoutAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutAPIClient.swift; sourceTree = "<group>"; };
+		38F613C1234F7FB9003FB95D /* GlucoseDirectClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseDirectClient.swift; sourceTree = "<group>"; };
 		38FA78D22350C80600780D61 /* TimeInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
 		38FEB835236082B900F1E810 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		A901264E26D95DFB0081BAD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A9BAC72726CDB7A5001C9493 /* NightscoutAPIClientPlugin.loopplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NightscoutAPIClientPlugin.loopplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9BAC72726CDB7A5001C9493 /* GlucoseDirectClientPlugin.loopplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GlucoseDirectClientPlugin.loopplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BAC72A26CDB7A5001C9493 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A9BAC74326CDBBB4001C9493 /* NightscoutAPIClientPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutAPIClientPlugin.swift; sourceTree = "<group>"; };
+		A9BAC74326CDBBB4001C9493 /* GlucoseDirectClientPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseDirectClientPlugin.swift; sourceTree = "<group>"; };
 		A9BAC74526CDC3AA001C9493 /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		A9BAC74726CDC3B3001C9493 /* OSLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSLog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,7 +96,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06E10A172360DBCC009B6FED /* LoopKit.framework in Frameworks */,
-				06E10A192360DBCE009B6FED /* NightscoutAPIClient.framework in Frameworks */,
+				06E10A192360DBCE009B6FED /* GlucoseDirectClient.framework in Frameworks */,
 				384D8F1123608C8100B1DD29 /* LoopKitUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,14 +110,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		38F6139F234F3067003FB95D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				38F613A3234F3067003FB95D /* NightscoutAPIClient.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A9BAC72426CDB7A5001C9493 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -153,30 +120,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		38D9A6482413C0870099AAF0 /* KalmanFilter */ = {
+		38E30FB62358C25000DAB3A0 /* GlucoseDirectClientUI */ = {
 			isa = PBXGroup;
 			children = (
-				38D9A64C2413C0D30099AAF0 /* DoubleExtension.swift */,
-				38D9A6492413C0D30099AAF0 /* KalmanFilter.swift */,
-				38D9A64A2413C0D30099AAF0 /* KalmanFilterType.swift */,
-			);
-			path = KalmanFilter;
-			sourceTree = "<group>";
-		};
-		38E30FB62358C25000DAB3A0 /* NightscoutAPIClientUI */ = {
-			isa = PBXGroup;
-			children = (
-				38E30FB72358C25000DAB3A0 /* NightscoutAPIClientUI.h */,
 				38E30FB82358C25000DAB3A0 /* Info.plist */,
+				38E30FB72358C25000DAB3A0 /* GlucoseDirectClientUI.h */,
 				38D2F4FC235A12AD004FFE14 /* SettingsView.swift */,
-				38589847235DA80E00919FD4 /* NightscoutAPIManager+UI.swift */,
-				A901264E26D95DFB0081BAD1 /* Assets.xcassets */,
-				3858984F235E027500919FD4 /* NightscoutAPISetupViewController.swift */,
-				38589851235E035D00919FD4 /* NightscoutAPISettingsViewController.swift */,
-				3858985D235E074600919FD4 /* NightscoutAPIService+UI.swift */,
+				38589847235DA80E00919FD4 /* GlucoseDirectManager+UI.swift */,
+				38589851235E035D00919FD4 /* GlucoseDirectSettingsViewController.swift */,
 				3897846324290961008AD57A /* Localizable.strings */,
+				A901264E26D95DFB0081BAD1 /* Assets.xcassets */,
 			);
-			path = NightscoutAPIClientUI;
+			path = GlucoseDirectClientUI;
 			sourceTree = "<group>";
 		};
 		38F6138F234F3066003FB95D = {
@@ -185,10 +140,9 @@
 				A9BAC74226CDBB60001C9493 /* Extensions */,
 				38F613B3234F313A003FB95D /* Cartfile */,
 				38F613BC234F3E47003FB95D /* Common */,
-				38F6139B234F3066003FB95D /* NightscoutAPIClient */,
-				38E30FB62358C25000DAB3A0 /* NightscoutAPIClientUI */,
-				38F613A6234F3067003FB95D /* NightscoutAPIClientTests */,
-				A9BAC72826CDB7A5001C9493 /* NightscoutAPIClientPlugin */,
+				38F6139B234F3066003FB95D /* GlucoseDirectClient */,
+				38E30FB62358C25000DAB3A0 /* GlucoseDirectClientUI */,
+				A9BAC72826CDB7A5001C9493 /* GlucoseDirectClientPlugin */,
 				38F6139A234F3066003FB95D /* Products */,
 				38F613B5234F3315003FB95D /* Frameworks */,
 			);
@@ -197,35 +151,23 @@
 		38F6139A234F3066003FB95D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				38F61399234F3066003FB95D /* NightscoutAPIClient.framework */,
-				38F613A2234F3067003FB95D /* NightscoutAPIClientTests.xctest */,
-				38E30FB52358C25000DAB3A0 /* NightscoutAPIClientUI.framework */,
-				A9BAC72726CDB7A5001C9493 /* NightscoutAPIClientPlugin.loopplugin */,
+				38F61399234F3066003FB95D /* GlucoseDirectClient.framework */,
+				38E30FB52358C25000DAB3A0 /* GlucoseDirectClientUI.framework */,
+				A9BAC72726CDB7A5001C9493 /* GlucoseDirectClientPlugin.loopplugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		38F6139B234F3066003FB95D /* NightscoutAPIClient */ = {
+		38F6139B234F3066003FB95D /* GlucoseDirectClient */ = {
 			isa = PBXGroup;
 			children = (
-				38D9A6482413C0870099AAF0 /* KalmanFilter */,
-				38F6139C234F3066003FB95D /* NightscoutAPIClient.h */,
 				38F6139D234F3066003FB95D /* Info.plist */,
+				38F6139C234F3066003FB95D /* GlucoseDirectClient.h */,
 				38F613BA234F3AD1003FB95D /* BloodGlucose.swift */,
-				38F613B8234F33B1003FB95D /* NightscoutAPIManager.swift */,
-				38F613BF234F401F003FB95D /* NightscoutAPIService.swift */,
-				38F613C1234F7FB9003FB95D /* NightscoutAPIClient.swift */,
+				38F613B8234F33B1003FB95D /* GlucoseDirectManager.swift */,
+				38F613C1234F7FB9003FB95D /* GlucoseDirectClient.swift */,
 			);
-			path = NightscoutAPIClient;
-			sourceTree = "<group>";
-		};
-		38F613A6234F3067003FB95D /* NightscoutAPIClientTests */ = {
-			isa = PBXGroup;
-			children = (
-				38F613A7234F3067003FB95D /* NightscoutAPIClientTests.swift */,
-				38F613A9234F3067003FB95D /* Info.plist */,
-			);
-			path = NightscoutAPIClientTests;
+			path = GlucoseDirectClient;
 			sourceTree = "<group>";
 		};
 		38F613B5234F3315003FB95D /* Frameworks */ = {
@@ -252,13 +194,13 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		A9BAC72826CDB7A5001C9493 /* NightscoutAPIClientPlugin */ = {
+		A9BAC72826CDB7A5001C9493 /* GlucoseDirectClientPlugin */ = {
 			isa = PBXGroup;
 			children = (
 				A9BAC72A26CDB7A5001C9493 /* Info.plist */,
-				A9BAC74326CDBBB4001C9493 /* NightscoutAPIClientPlugin.swift */,
+				A9BAC74326CDBBB4001C9493 /* GlucoseDirectClientPlugin.swift */,
 			);
-			path = NightscoutAPIClientPlugin;
+			path = GlucoseDirectClientPlugin;
 			sourceTree = "<group>";
 		};
 		A9BAC74226CDBB60001C9493 /* Extensions */ = {
@@ -277,7 +219,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38E30FC52358C25100DAB3A0 /* NightscoutAPIClientUI.h in Headers */,
+				38E30FC52358C25100DAB3A0 /* GlucoseDirectClientUI.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +227,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38F613AA234F3067003FB95D /* NightscoutAPIClient.h in Headers */,
+				38F613AA234F3067003FB95D /* GlucoseDirectClient.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,9 +241,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		38E30FB42358C25000DAB3A0 /* NightscoutAPIClientUI */ = {
+		38E30FB42358C25000DAB3A0 /* GlucoseDirectClientUI */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 38E30FCA2358C25100DAB3A0 /* Build configuration list for PBXNativeTarget "NightscoutAPIClientUI" */;
+			buildConfigurationList = 38E30FCA2358C25100DAB3A0 /* Build configuration list for PBXNativeTarget "GlucoseDirectClientUI" */;
 			buildPhases = (
 				38E30FB02358C25000DAB3A0 /* Headers */,
 				38E30FB12358C25000DAB3A0 /* Sources */,
@@ -313,16 +255,16 @@
 			dependencies = (
 				3858985A235E051F00919FD4 /* PBXTargetDependency */,
 			);
-			name = NightscoutAPIClientUI;
+			name = GlucoseDirectClientUI;
 			packageProductDependencies = (
 			);
-			productName = NightscoutAPIClientUI;
-			productReference = 38E30FB52358C25000DAB3A0 /* NightscoutAPIClientUI.framework */;
+			productName = GlucoseDirectClientUI;
+			productReference = 38E30FB52358C25000DAB3A0 /* GlucoseDirectClientUI.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		38F61398234F3066003FB95D /* NightscoutAPIClient */ = {
+		38F61398234F3066003FB95D /* GlucoseDirectClient */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 38F613AD234F3067003FB95D /* Build configuration list for PBXNativeTarget "NightscoutAPIClient" */;
+			buildConfigurationList = 38F613AD234F3067003FB95D /* Build configuration list for PBXNativeTarget "GlucoseDirectClient" */;
 			buildPhases = (
 				38F61394234F3066003FB95D /* Headers */,
 				38F61395234F3066003FB95D /* Sources */,
@@ -333,34 +275,16 @@
 			);
 			dependencies = (
 			);
-			name = NightscoutAPIClient;
+			name = GlucoseDirectClient;
 			packageProductDependencies = (
 			);
-			productName = NightscoutAPIClient;
-			productReference = 38F61399234F3066003FB95D /* NightscoutAPIClient.framework */;
+			productName = GlucoseDirectClient;
+			productReference = 38F61399234F3066003FB95D /* GlucoseDirectClient.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		38F613A1234F3067003FB95D /* NightscoutAPIClientTests */ = {
+		A9BAC72626CDB7A5001C9493 /* GlucoseDirectClientPlugin */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 38F613B0234F3067003FB95D /* Build configuration list for PBXNativeTarget "NightscoutAPIClientTests" */;
-			buildPhases = (
-				38F6139E234F3067003FB95D /* Sources */,
-				38F6139F234F3067003FB95D /* Frameworks */,
-				38F613A0234F3067003FB95D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				38F613A5234F3067003FB95D /* PBXTargetDependency */,
-			);
-			name = NightscoutAPIClientTests;
-			productName = NightscoutAPIClientTests;
-			productReference = 38F613A2234F3067003FB95D /* NightscoutAPIClientTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		A9BAC72626CDB7A5001C9493 /* NightscoutAPIClientPlugin */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A9BAC73826CDB7A5001C9493 /* Build configuration list for PBXNativeTarget "NightscoutAPIClientPlugin" */;
+			buildConfigurationList = A9BAC73826CDB7A5001C9493 /* Build configuration list for PBXNativeTarget "GlucoseDirectClientPlugin" */;
 			buildPhases = (
 				A9BAC72226CDB7A5001C9493 /* Headers */,
 				A9BAC72326CDB7A5001C9493 /* Sources */,
@@ -374,9 +298,9 @@
 				A9BAC73F26CDB821001C9493 /* PBXTargetDependency */,
 				A9BAC74126CDB821001C9493 /* PBXTargetDependency */,
 			);
-			name = NightscoutAPIClientPlugin;
-			productName = NightscoutAPIClientPlugin;
-			productReference = A9BAC72726CDB7A5001C9493 /* NightscoutAPIClientPlugin.loopplugin */;
+			name = GlucoseDirectClientPlugin;
+			productName = GlucoseDirectClientPlugin;
+			productReference = A9BAC72726CDB7A5001C9493 /* GlucoseDirectClientPlugin.loopplugin */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -397,23 +321,19 @@
 						CreatedOnToolsVersion = 11.1;
 						LastSwiftMigration = 1110;
 					};
-					38F613A1234F3067003FB95D = {
-						CreatedOnToolsVersion = 11.1;
-					};
 					A9BAC72626CDB7A5001C9493 = {
 						CreatedOnToolsVersion = 12.5.1;
 						LastSwiftMigration = 1250;
 					};
 				};
 			};
-			buildConfigurationList = 38F61393234F3066003FB95D /* Build configuration list for PBXProject "NightscoutAPIClient" */;
+			buildConfigurationList = 38F61393234F3066003FB95D /* Build configuration list for PBXProject "GlucoseDirectClient" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
-				ru,
 			);
 			mainGroup = 38F6138F234F3066003FB95D;
 			packageReferences = (
@@ -422,10 +342,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				38F61398234F3066003FB95D /* NightscoutAPIClient */,
-				38E30FB42358C25000DAB3A0 /* NightscoutAPIClientUI */,
-				38F613A1234F3067003FB95D /* NightscoutAPIClientTests */,
-				A9BAC72626CDB7A5001C9493 /* NightscoutAPIClientPlugin */,
+				38F61398234F3066003FB95D /* GlucoseDirectClient */,
+				38E30FB42358C25000DAB3A0 /* GlucoseDirectClientUI */,
+				A9BAC72626CDB7A5001C9493 /* GlucoseDirectClientPlugin */,
 			);
 		};
 /* End PBXProject section */
@@ -441,13 +360,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		38F61397234F3066003FB95D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		38F613A0234F3067003FB95D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -472,8 +384,8 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/NightscoutAPIClient.framework",
-				"$(BUILT_PRODUCTS_DIR)/NightscoutAPIClientUI.framework",
+				"$(BUILT_PRODUCTS_DIR)/GlucoseDirectClient.framework",
+				"$(BUILT_PRODUCTS_DIR)/GlucoseDirectClientUI.framework",
 			);
 			name = "Copy Frameworks with Carthage";
 			outputFileListPaths = (
@@ -492,12 +404,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				38589860235E07D500919FD4 /* TimeInterval.swift in Sources */,
-				38589848235DA80E00919FD4 /* NightscoutAPIManager+UI.swift in Sources */,
+				38589848235DA80E00919FD4 /* GlucoseDirectManager+UI.swift in Sources */,
 				A9BAC74926CDC3CD001C9493 /* OSLog.swift in Sources */,
-				38589850235E027500919FD4 /* NightscoutAPISetupViewController.swift in Sources */,
 				3858985F235E07CC00919FD4 /* LocalizedString.swift in Sources */,
-				3858985E235E074600919FD4 /* NightscoutAPIService+UI.swift in Sources */,
-				38589852235E035D00919FD4 /* NightscoutAPISettingsViewController.swift in Sources */,
+				38589852235E035D00919FD4 /* GlucoseDirectSettingsViewController.swift in Sources */,
 				38D2F4FD235A12AD004FFE14 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,24 +416,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38F613C0234F401F003FB95D /* NightscoutAPIService.swift in Sources */,
 				38FA78D32350C80600780D61 /* TimeInterval.swift in Sources */,
-				38F613B9234F33B1003FB95D /* NightscoutAPIManager.swift in Sources */,
-				38D9A6502413C0D30099AAF0 /* DoubleExtension.swift in Sources */,
+				38F613B9234F33B1003FB95D /* GlucoseDirectManager.swift in Sources */,
 				38F613BB234F3AD1003FB95D /* BloodGlucose.swift in Sources */,
 				38B66F7023C4B96A009594BB /* DispatchTimer.swift in Sources */,
-				38D9A64E2413C0D30099AAF0 /* KalmanFilterType.swift in Sources */,
-				38F613C2234F7FB9003FB95D /* NightscoutAPIClient.swift in Sources */,
+				38F613C2234F7FB9003FB95D /* GlucoseDirectClient.swift in Sources */,
 				38F613BE234F3E83003FB95D /* LocalizedString.swift in Sources */,
-				38D9A64D2413C0D30099AAF0 /* KalmanFilter.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		38F6139E234F3067003FB95D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				38F613A8234F3067003FB95D /* NightscoutAPIClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,7 +429,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9BAC74426CDBBB4001C9493 /* NightscoutAPIClientPlugin.swift in Sources */,
+				A9BAC74426CDBBB4001C9493 /* GlucoseDirectClientPlugin.swift in Sources */,
 				A9BAC74A26CDC565001C9493 /* OSLog.swift in Sources */,
 				A9BAC74626CDC3AA001C9493 /* Bundle.swift in Sources */,
 			);
@@ -543,22 +441,17 @@
 		3858985A235E051F00919FD4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			platformFilter = ios;
-			target = 38F61398234F3066003FB95D /* NightscoutAPIClient */;
+			target = 38F61398234F3066003FB95D /* GlucoseDirectClient */;
 			targetProxy = 38589859235E051F00919FD4 /* PBXContainerItemProxy */;
-		};
-		38F613A5234F3067003FB95D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 38F61398234F3066003FB95D /* NightscoutAPIClient */;
-			targetProxy = 38F613A4234F3067003FB95D /* PBXContainerItemProxy */;
 		};
 		A9BAC73F26CDB821001C9493 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 38F61398234F3066003FB95D /* NightscoutAPIClient */;
+			target = 38F61398234F3066003FB95D /* GlucoseDirectClient */;
 			targetProxy = A9BAC73E26CDB821001C9493 /* PBXContainerItemProxy */;
 		};
 		A9BAC74126CDB821001C9493 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 38E30FB42358C25000DAB3A0 /* NightscoutAPIClientUI */;
+			target = 38E30FB42358C25000DAB3A0 /* GlucoseDirectClientUI */;
 			targetProxy = A9BAC74026CDB821001C9493 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -568,7 +461,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				3897846224290961008AD57A /* en */,
-				3897846424290997008AD57A /* ru */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -587,7 +479,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = NightscoutAPIClientUI/Info.plist;
+				INFOPLIST_FILE = GlucoseDirectClientUI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -595,7 +487,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.artpancreas.NightscoutAPIClientUI;
+				PRODUCT_BUNDLE_IDENTIFIER = "name.9JNYW2DG9D.libre-direct-client-ui";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
@@ -616,7 +508,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = NightscoutAPIClientUI/Info.plist;
+				INFOPLIST_FILE = GlucoseDirectClientUI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -624,7 +516,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.artpancreas.NightscoutAPIClientUI;
+				PRODUCT_BUNDLE_IDENTIFIER = "name.9JNYW2DG9D.libre-direct-client-ui";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
@@ -770,7 +662,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = NightscoutAPIClient/Info.plist;
+				INFOPLIST_FILE = GlucoseDirectClient/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -778,7 +670,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.artpancreas.NightscoutAPIClient;
+				PRODUCT_BUNDLE_IDENTIFIER = "name.9JNYW2DG9D.libre-direct-client";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
@@ -801,7 +693,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = NightscoutAPIClient/Info.plist;
+				INFOPLIST_FILE = GlucoseDirectClient/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -809,50 +701,10 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.artpancreas.NightscoutAPIClient;
+				PRODUCT_BUNDLE_IDENTIFIER = "name.9JNYW2DG9D.libre-direct-client";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		38F613B1234F3067003FB95D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = NightscoutAPIClientTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.artpancreas.NightscoutAPIClientTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		38F613B2234F3067003FB95D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = NightscoutAPIClientTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.artpancreas.NightscoutAPIClientTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -870,7 +722,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = NightscoutAPIClientPlugin/Info.plist;
+				INFOPLIST_FILE = GlucoseDirectClientPlugin/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -878,7 +730,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.artpancreas.NightscoutAPIClientPlugin;
+				PRODUCT_BUNDLE_IDENTIFIER = "name.9JNYW2DG9D.libre-direct-client-plugin";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
@@ -901,7 +753,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = NightscoutAPIClientPlugin/Info.plist;
+				INFOPLIST_FILE = GlucoseDirectClientPlugin/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -909,7 +761,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.artpancreas.NightscoutAPIClientPlugin;
+				PRODUCT_BUNDLE_IDENTIFIER = "name.9JNYW2DG9D.libre-direct-client-plugin";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
@@ -922,7 +774,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		38E30FCA2358C25100DAB3A0 /* Build configuration list for PBXNativeTarget "NightscoutAPIClientUI" */ = {
+		38E30FCA2358C25100DAB3A0 /* Build configuration list for PBXNativeTarget "GlucoseDirectClientUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				38E30FC62358C25100DAB3A0 /* Debug */,
@@ -931,7 +783,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		38F61393234F3066003FB95D /* Build configuration list for PBXProject "NightscoutAPIClient" */ = {
+		38F61393234F3066003FB95D /* Build configuration list for PBXProject "GlucoseDirectClient" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				38F613AB234F3067003FB95D /* Debug */,
@@ -940,7 +792,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		38F613AD234F3067003FB95D /* Build configuration list for PBXNativeTarget "NightscoutAPIClient" */ = {
+		38F613AD234F3067003FB95D /* Build configuration list for PBXNativeTarget "GlucoseDirectClient" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				38F613AE234F3067003FB95D /* Debug */,
@@ -949,16 +801,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		38F613B0234F3067003FB95D /* Build configuration list for PBXNativeTarget "NightscoutAPIClientTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				38F613B1234F3067003FB95D /* Debug */,
-				38F613B2234F3067003FB95D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A9BAC73826CDB7A5001C9493 /* Build configuration list for PBXNativeTarget "NightscoutAPIClientPlugin" */ = {
+		A9BAC73826CDB7A5001C9493 /* Build configuration list for PBXNativeTarget "GlucoseDirectClientPlugin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A9BAC73926CDB7A5001C9493 /* Debug */,

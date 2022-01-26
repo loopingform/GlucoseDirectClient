@@ -8,9 +8,8 @@
 import os.log
 
 extension OSLog {
-
     convenience init(category: String) {
-        self.init(subsystem: "com.loopkit.NightscoutAPIClient", category: category)
+        self.init(subsystem: "com.loopkit.GlucoseDirectClient", category: category)
     }
 
     func debug(_ message: StaticString, _ args: CVarArg...) {
@@ -47,5 +46,4 @@ extension OSLog {
             os_log(message, log: self, type: type, args)
         }
     }
-    
 }

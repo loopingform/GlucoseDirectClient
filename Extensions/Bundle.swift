@@ -8,7 +8,6 @@
 import Foundation
 
 extension Bundle {
-
     var fullVersionString: String {
         return "\(shortVersionString).\(version)"
     }
@@ -24,5 +23,4 @@ extension Bundle {
     var bundleDisplayName: String {
         return object(forInfoDictionaryKey: "CFBundleDisplayName") as! String
     }
-    
 }
