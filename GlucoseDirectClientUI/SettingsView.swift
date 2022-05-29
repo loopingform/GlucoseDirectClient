@@ -2,9 +2,6 @@
 //  SettingsView.swift
 //  GlucoseDirectClientUI
 //
-//  Created by Ivan Valkou on 18.10.2019.
-//  Copyright © 2019 Ivan Valkou. All rights reserved.
-//
 
 import Combine
 import SwiftUI

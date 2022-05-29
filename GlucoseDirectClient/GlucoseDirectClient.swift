@@ -6,13 +6,15 @@
 import Combine
 import Foundation
 
-// MARK: - GlucoseDirectClient
+// MARK: - ClientError
 
 public enum ClientError: Error {
     case fetchError
     case dataError(reason: String)
     case dateError
 }
+
+// MARK: - GlucoseDirectClient
 
 final class GlucoseDirectClient {
     // MARK: Lifecycle
