@@ -1,6 +1,5 @@
 //
 //  Bundle.swift
-//  NightscoutServiceKit
 //
 //  Copyright © 2021 LoopKit Authors. All rights reserved.
 //

@@ -30,7 +30,7 @@ extension BloodGlucose: GlucoseValue {
 // MARK: GlucoseDisplayable
 
 extension BloodGlucose: GlucoseDisplayable {
-    public var isStateValid: Bool { glucose >= 40 && glucose <= 500 }
+    public var isStateValid: Bool { glucose > 39 && glucose < 501 }
     public var trendType: GlucoseTrend? { GlucoseTrend(rawValue: trend) }
     public var isLocal: Bool { false }
 

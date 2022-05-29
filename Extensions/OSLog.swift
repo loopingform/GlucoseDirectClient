@@ -1,6 +1,5 @@
 //
 //  OSLog.swift
-//  NightscoutService
 //
 //  Copyright © 2019 LoopKit Authors. All rights reserved.
 //

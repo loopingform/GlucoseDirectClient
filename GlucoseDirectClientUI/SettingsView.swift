@@ -29,8 +29,6 @@ public struct SettingsView: View {
 
     public var body: some View {
         VStack {
-            Text("Dummy")
-
             HStack {
                 Spacer()
                 deleteCGMButton
