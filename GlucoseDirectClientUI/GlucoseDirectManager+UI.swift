@@ -14,7 +14,7 @@ import LoopKitUI
 extension GlucoseDirectManager: CGMManagerUI {
     // TODO: Placeholder.
     public static var onboardingImage: UIImage? {
-        return UIImage(named: "nightscout", in: Bundle(for: GlucoseDirectSettingsViewController.self), compatibleWith: nil)!
+        return UIImage(named: "glucose-direct", in: Bundle(for: GlucoseDirectSettingsViewController.self), compatibleWith: nil)!
     }
 
     public static func setupViewController(bluetoothProvider: BluetoothProvider, displayGlucoseUnitObservable: DisplayGlucoseUnitObservable, colorPalette: LoopUIColorPalette, allowDebugFeatures: Bool) -> SetupUIResult<CGMManagerViewController, CGMManagerUI> {
@@ -28,7 +28,7 @@ extension GlucoseDirectManager: CGMManagerUI {
     }
 
     public var smallImage: UIImage? {
-        return UIImage(named: "nightscout", in: Bundle(for: GlucoseDirectSettingsViewController.self), compatibleWith: nil)!
+        return UIImage(named: "glucose-direct", in: Bundle(for: GlucoseDirectSettingsViewController.self), compatibleWith: nil)!
     }
 
     // TODO: Placeholder.
