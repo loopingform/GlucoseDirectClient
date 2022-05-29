@@ -21,7 +21,7 @@
 	<key>NSPrincipalClass</key>
 	<string>GlucoseDirectClientPlugin</string>
 	<key>com.loopkit.Loop.CGMManagerDisplayName</key>
-	<string>Nightscout</string>
+	<string>Glucose Direct Client</string>
 	<key>com.loopkit.Loop.CGMManagerIdentifier</key>
 	<string>GlucoseDirectClient</string>
 </dict>
