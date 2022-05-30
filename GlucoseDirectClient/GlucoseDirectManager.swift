@@ -86,7 +86,7 @@ public class GlucoseDirectManager: CGMManager {
     }
 
     public var appURL: URL? {
-        return URL(string: "diabox://")
+        return URL(string: "libredirect://")
     }
 
     public func fetchNewDataIfNeeded(_ completion: @escaping (CGMReadingResult) -> Void) {
