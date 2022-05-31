@@ -131,7 +131,7 @@ public class GlucoseDirectSettingsViewController: UITableViewController {
                 }
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "text", for: indexPath)
-                cell.textLabel?.text = LocalizedString("No data available")
+                cell.textLabel?.text = LocalizedString("No glucose reading available")
 
                 return cell
             }
