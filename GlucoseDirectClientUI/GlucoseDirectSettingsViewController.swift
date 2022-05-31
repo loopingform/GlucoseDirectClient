@@ -83,11 +83,7 @@ public class GlucoseDirectSettingsViewController: UITableViewController {
             return LocalizedString("Latest reading")
 
         case .transmitter:
-            if cgmManager.transmitter != nil || cgmManager.transmitterBattery != nil || cgmManager.transmitterHardware != nil || cgmManager.transmitterFirmware != nil {
-                return LocalizedString("Transmitter")
-            }
-
-            return nil
+            return LocalizedString("Transmitter")
 
         case .sensor:
             return LocalizedString("Sensor")
