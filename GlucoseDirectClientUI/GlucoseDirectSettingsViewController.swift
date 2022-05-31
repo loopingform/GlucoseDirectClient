@@ -70,7 +70,11 @@ public class GlucoseDirectSettingsViewController: UITableViewController {
 
             return 1
         case .sensor:
-            return SensorSection.allCases.count
+            if cgmManager.sensor != nil || cgmManager.sensorConnectionState != nil {
+                return SensorSection.allCases.count
+            }
+
+            return 1
         }
     }
 
@@ -167,17 +171,24 @@ public class GlucoseDirectSettingsViewController: UITableViewController {
                 return cell
             }
         case .sensor:
-            switch SensorSection(rawValue: indexPath.row)! {
-            case .model:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "value", for: indexPath) as! ValueStyleCell
-                cell.textLabel?.text = LocalizedString("Sensor model")
-                cell.detailTextLabel?.text = cgmManager.sensor ?? "-"
+            if cgmManager.sensor != nil || cgmManager.sensorConnectionState != nil {
+                switch SensorSection(rawValue: indexPath.row)! {
+                case .model:
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "value", for: indexPath) as! ValueStyleCell
+                    cell.textLabel?.text = LocalizedString("Sensor model")
+                    cell.detailTextLabel?.text = cgmManager.sensor ?? "-"
 
-                return cell
-            case .connectionState:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "value", for: indexPath) as! ValueStyleCell
-                cell.textLabel?.text = LocalizedString("Sensor connection state")
-                cell.detailTextLabel?.text = cgmManager.sensorConnectionState ?? "-"
+                    return cell
+                case .connectionState:
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "value", for: indexPath) as! ValueStyleCell
+                    cell.textLabel?.text = LocalizedString("Sensor connection state")
+                    cell.detailTextLabel?.text = cgmManager.sensorConnectionState ?? "-"
+
+                    return cell
+                }
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "text", for: indexPath)
+                cell.textLabel?.text = LocalizedString("No sensor data available")
 
                 return cell
             }
