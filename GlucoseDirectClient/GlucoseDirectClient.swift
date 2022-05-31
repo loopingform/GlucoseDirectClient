@@ -5,28 +5,22 @@
 
 import Combine
 import Foundation
-
-// MARK: - ClientError
-
-public enum ClientError: Error {
-    case fetchError
-    case dataError(reason: String)
-    case dateError
-}
+import HealthKit
+import LoopKit
 
 // MARK: - GlucoseDirectClient
 
-final class GlucoseDirectClient {
+class GlucoseDirectClient {
     // MARK: Lifecycle
 
-    public init(_ group: String? = Bundle.main.appGroupSuiteName) {
-        shared = UserDefaults(suiteName: group)
+    init(_ sharedDefaults: UserDefaults?) {
+        self.sharedDefaults = sharedDefaults
     }
 
     // MARK: Internal
 
-    func fetchLast(_ n: Int) -> AnyPublisher<[BloodGlucose], Swift.Error> {
-        shared.publisher
+    func fetchLast(_ n: Int) -> AnyPublisher<[ClientGlucose], Swift.Error> {
+        sharedDefaults.publisher
             .retry(2)
             .tryMap { try self.fetchLastBGs(n, $0) }
             .map { $0.filter { $0.isStateValid } }
@@ -35,9 +29,9 @@ final class GlucoseDirectClient {
 
     // MARK: Private
 
-    private let shared: UserDefaults?
+    private let sharedDefaults: UserDefaults?
 
-    private func fetchLastBGs(_ n: Int, _ sharedParm: UserDefaults?) throws -> [BloodGlucose] {
+    private func fetchLastBGs(_ n: Int, _ sharedParm: UserDefaults?) throws -> [ClientGlucose] {
         do {
             guard let sharedData = sharedParm?.data(forKey: "latestReadings") else {
                 throw ClientError.fetchError
@@ -48,8 +42,8 @@ final class GlucoseDirectClient {
                 throw ClientError.dataError(reason: "Failed to decode SGVs as array from recieved data.")
             }
 
-            var transformed: [BloodGlucose] = []
-            for sgv in sgvs.prefix(n) {
+            var transformed: [ClientGlucose] = []
+            for sgv in sgvs.suffix(n) {
                 if let from = sgv["from"] as? String {
                     guard from == "GlucoseDirect" else {
                         continue
@@ -59,14 +53,13 @@ final class GlucoseDirectClient {
                 if let glucose = sgv["Value"] as? Int, let trend = sgv["Trend"] as? Int, let dt = sgv["DT"] as? String {
                     // only add glucose readings in a valid range - skip unrealistically low or high readings
                     // this does also prevent negative glucose values from being cast to UInt16
-                    transformed.append(BloodGlucose(sgv: glucose, trend: trend, date: try parseDate(dt), filtered: nil, noise: nil))
+                    transformed.append(ClientGlucose(sgv: glucose, trend: trend, date: try parseDate(dt), filtered: nil, noise: nil))
                 } else {
                     throw ClientError.dataError(reason: "Failed to decode an SGV record.")
                 }
             }
 
             return transformed
-
         } catch let error as ClientError {
             throw error
         } catch {
@@ -83,7 +76,9 @@ final class GlucoseDirectClient {
             #else
                 let matchRange = match.rangeAt(1)
             #endif
+
             let epoch = Double((wt as NSString).substring(with: matchRange))! / 1000
+
             return Date(timeIntervalSince1970: epoch)
         } else {
             throw ClientError.dateError
@@ -91,8 +86,50 @@ final class GlucoseDirectClient {
     }
 }
 
-public extension Bundle {
-    var appGroupSuiteName: String {
-        return object(forInfoDictionaryKey: "AppGroupIdentifier") as! String
+// MARK: - ClientError
+
+public enum ClientError: Error {
+    case fetchError
+    case dataError(reason: String)
+    case dateError
+}
+
+// MARK: - ClientGlucose
+
+public struct ClientGlucose: Codable {
+    public var sgv: Int?
+    public let trend: Int
+    public let date: Date
+    public let filtered: Double?
+    public let noise: Int?
+
+    public var glucose: Int { sgv ?? 0 }
+}
+
+// MARK: GlucoseValue
+
+extension ClientGlucose: GlucoseValue {
+    public var startDate: Date { date }
+    public var quantity: HKQuantity { .init(unit: .milligramsPerDeciliter, doubleValue: Double(glucose)) }
+}
+
+// MARK: GlucoseDisplayable
+
+extension ClientGlucose: GlucoseDisplayable {
+    public var isStateValid: Bool { glucose > 39 && glucose < 501 }
+    public var trendType: GlucoseTrend? { GlucoseTrend(rawValue: trend) }
+    public var isLocal: Bool { false }
+
+    // TODO: Placeholder. This functionality will come with LOOP-1311
+    public var glucoseRangeCategory: GlucoseRangeCategory? {
+        return nil
     }
+
+    public var trendRate: HKQuantity? {
+        return nil
+    }
+}
+
+extension HKUnit {
+    static let milligramsPerDeciliter: HKUnit = HKUnit.gramUnit(with: .milli).unitDivided(by: .literUnit(with: .deci))
 }

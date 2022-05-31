@@ -1,9 +1,47 @@
-"Upload to remote service" = "Upload to remote service";
-"Select Upload option if you are using a source other than a remote service." = "Select Upload option if you are using a source other than a remote service.";
+/* (No Comment) */
+"App info" = "App info";
 
-"Use glucose filter" = "Use glucose filter";
-"Use Kalman filter to smooth out a sensor noise." = "Use Kalman filter to smooth out a sensor noise.";
+/* (No Comment) */
+"CGM Settings" = "CGM Settings";
 
-"Delete CGM" = "Delete CGM";
-"Glukose Direkt" = "Glucose Direct";
-"Close" = "Close";
+/* (No Comment) */
+"Date" = "Date";
+
+/* (No Comment) */
+"Glucose Direct Client" = "Glucose Direct Client";
+
+/* (No Comment) */
+"Glucose" = "Glucose";
+
+/* (No Comment) */
+"Latest reading" = "Latest reading";
+
+/* (No Comment) */
+"No data available" = "No data available";
+
+/* (No Comment) */
+"Sensor connection state" = "State";
+
+/* (No Comment) */
+"Sensor model" = "Model";
+
+/* (No Comment) */
+"Sensor" = "Sensor";
+
+/* (No Comment) */
+"Transmitter battery" = "Battery";
+
+/* (No Comment) */
+"Transmitter firmware" = "Firmware";
+
+/* (No Comment) */
+"Transmitter hardware" = "Hardware";
+
+/* (No Comment) */
+"Transmitter model" = "Model";
+
+/* (No Comment) */
+"Transmitter" = "Transmitter";
+
+/* (No Comment) */
+"Trend" = "Trend";

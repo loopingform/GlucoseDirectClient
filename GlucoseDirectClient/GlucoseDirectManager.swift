@@ -16,9 +16,9 @@ public class GlucoseDirectManager: CGMManager {
     // MARK: Lifecycle
 
     public init() {
-        client = GlucoseDirectClient()
+        sharedDefaults = UserDefaults(suiteName: Bundle.main.appGroupSuiteName)
+        client = GlucoseDirectClient(sharedDefaults)
         updateTimer = DispatchTimer(timeInterval: 10, queue: processQueue)
-
         scheduleUpdateTimer()
     }
 
@@ -30,19 +30,65 @@ public class GlucoseDirectManager: CGMManager {
 
     // MARK: Public
 
-    public enum CGMError: String, Error {
-        case tooFlatData = "BG data is too flat."
-    }
-
     public static let managerIdentifier = "GlucoseDirectClient"
-    public static let localizedTitle = LocalizedString("Glucose Direct Client", comment: "Title for the CGMManager option")
+    public static let localizedTitle = LocalizedString("Glucose Direct Client")
 
     public let delegate = WeakSynchronizedDelegate<CGMManagerDelegate>()
     public let providesBLEHeartbeat = false
 
     public var managedDataInterval: TimeInterval?
     public var shouldSyncToRemoteService = false
-    public var device: HKDevice?
+    public private(set) var latestGlucose: ClientGlucose?
+    public private(set) var latestGlucoseSample: NewGlucoseSample?
+
+    public var sensor: String? {
+        sharedDefaults?.string(forKey: "glucosedirect--sensor")
+    }
+
+    public var sensorState: String? {
+        sharedDefaults?.string(forKey: "glucosedirect--sensor-state")
+    }
+
+    public var sensorConnectionState: String? {
+        sharedDefaults?.string(forKey: "glucosedirect--sensor-connection-state")
+    }
+
+    public var app: String? {
+        sharedDefaults?.string(forKey: "glucosedirect--app")
+    }
+    
+    public var appVersion: String? {
+        sharedDefaults?.string(forKey: "glucosedirect--app-version")
+    }
+
+    public var transmitter: String? {
+        sharedDefaults?.string(forKey: "glucosedirect--transmitter")
+    }
+
+    public var transmitterBattery: String? {
+        sharedDefaults?.string(forKey: "glucosedirect--transmitter-battery")
+    }
+
+    public var transmitterHardware: String? {
+        sharedDefaults?.string(forKey: "glucosedirect--transmitter-hardware")
+    }
+
+    public var transmitterFirmware: String? {
+        sharedDefaults?.string(forKey: "glucosedirect--transmitter-firmware")
+    }
+
+    public var device: HKDevice? {
+        HKDevice(
+            name: managerIdentifier,
+            manufacturer: nil,
+            model: sensor,
+            hardwareVersion: transmitterHardware,
+            firmwareVersion: transmitterFirmware,
+            softwareVersion: appVersion,
+            localIdentifier: nil,
+            udiDeviceIdentifier: nil
+        )
+    }
 
     public var managerIdentifier: String {
         return GlucoseDirectManager.managerIdentifier
@@ -52,11 +98,11 @@ public class GlucoseDirectManager: CGMManager {
         return GlucoseDirectManager.localizedTitle
     }
 
-    public var glucoseDisplay: GlucoseDisplayable? { latestBackfill }
+    public var glucoseDisplay: GlucoseDisplayable? { latestGlucose }
 
     public var cgmManagerStatus: CGMManagerStatus {
         // TODO: Probably need a better way to calculate this.
-        if let latestGlucose = latestBackfill, latestGlucose.startDate.timeIntervalSinceNow > -TimeInterval(minutes: 4.5) {
+        if let latestGlucose = latestGlucose, latestGlucose.startDate.timeIntervalSinceNow > -TimeInterval(minutes: 4.5) {
             return .init(hasValidSensorSession: true, device: device)
         } else {
             return .init(hasValidSensorSession: false, device: device)
@@ -82,11 +128,11 @@ public class GlucoseDirectManager: CGMManager {
     }
 
     public var debugDescription: String {
-        "## GlucoseDirectManager\nlatestBackfill: \(String(describing: latestBackfill))\n"
+        "## GlucoseDirectManager\nlatestBackfill: \(String(describing: latestGlucose))\n"
     }
 
     public var appURL: URL? {
-        return URL(string: "libredirect://")
+        return URL(string: "glucosedirect://")
     }
 
     public func fetchNewDataIfNeeded(_ completion: @escaping (CGMReadingResult) -> Void) {
@@ -95,14 +141,16 @@ public class GlucoseDirectManager: CGMManager {
                 self.delegateQueue.async {
                     completion(.noData)
                 }
+
                 return
             }
 
             // If our last glucose was less than 0.5 minutes ago, don't fetch.
-            if let latestGlucose = self.latestBackfill, latestGlucose.startDate.timeIntervalSinceNow > -TimeInterval(minutes: 0.5) {
+            if let latestGlucose = self.latestGlucose, latestGlucose.startDate.timeIntervalSinceNow > -TimeInterval(minutes: 0.5) {
                 self.delegateQueue.async {
                     completion(.noData)
                 }
+
                 return
             }
 
@@ -130,7 +178,7 @@ public class GlucoseDirectManager: CGMManager {
 
                     var startDate: Date?
 
-                    if let latestGlucose = self.latestBackfill {
+                    if let latestGlucose = self.latestGlucose {
                         startDate = latestGlucose.startDate
                     } else {
                         startDate = self.delegate.call { delegate -> Date? in
@@ -139,17 +187,19 @@ public class GlucoseDirectManager: CGMManager {
                     }
 
                     let newGlucose = glucose.filterDateRange(startDate, nil)
-
                     let newGlucoseSamples = newGlucose.filter { $0.isStateValid }.map {
                         NewGlucoseSample(date: $0.startDate, quantity: $0.quantity, condition: nil, trend: $0.trendType, trendRate: $0.trendRate, isDisplayOnly: false, wasUserEntered: false, syncIdentifier: "\(Int($0.startDate.timeIntervalSince1970))", device: self.device)
                     }
 
-                    self.latestBackfill = newGlucose.first
+                    self.latestGlucose = newGlucose.first
+                    self.latestGlucoseSample = newGlucoseSamples.first
+
                     self.delegateQueue.async {
                         guard !newGlucoseSamples.isEmpty else {
                             completion(.noData)
                             return
                         }
+
                         completion(.newData(newGlucoseSamples))
                     }
                 })
@@ -162,15 +212,12 @@ public class GlucoseDirectManager: CGMManager {
         static let shouldSyncKey = "GlucoseDirectClient.shouldSync"
     }
 
-    private var latestBackfill: BloodGlucose?
-
     private var client: GlucoseDirectClient?
-
-    private let keychain = KeychainManager()
     private var requestReceiver: Cancellable?
     private let processQueue = DispatchQueue(label: "GlucoseDirectManager.processQueue")
     private var isFetching = false
     private let updateTimer: DispatchTimer
+    private let sharedDefaults: UserDefaults?
 
     private func scheduleUpdateTimer() {
         updateTimer.suspend()
@@ -193,17 +240,19 @@ public class GlucoseDirectManager: CGMManager {
     }
 }
 
-// MARK: - AlertResponder implementation
-
 public extension GlucoseDirectManager {
     func acknowledgeAlert(alertIdentifier: Alert.AlertIdentifier, completion: @escaping (Error?) -> Void) {
         completion(nil)
     }
 }
 
-// MARK: - AlertSoundVendor implementation
-
 public extension GlucoseDirectManager {
     func getSoundBaseURL() -> URL? { return nil }
     func getSounds() -> [Alert.Sound] { return [] }
+}
+
+private extension Bundle {
+    var appGroupSuiteName: String {
+        return object(forInfoDictionaryKey: "AppGroupIdentifier") as! String
+    }
 }

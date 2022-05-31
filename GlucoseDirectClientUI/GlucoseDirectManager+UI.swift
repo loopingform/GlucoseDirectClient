@@ -11,10 +11,16 @@ import HealthKit
 import LoopKit
 import LoopKitUI
 
+extension FrameworkBundle {
+    static let own = Bundle(for: GlucoseDirectSettingsViewController.self)
+}
+
+// MARK: - GlucoseDirectManager + CGMManagerUI
+
 extension GlucoseDirectManager: CGMManagerUI {
     // TODO: Placeholder.
     public static var onboardingImage: UIImage? {
-        return UIImage(named: "glucose-direct", in: Bundle(for: GlucoseDirectSettingsViewController.self), compatibleWith: nil)!
+        return UIImage(named: "glucose-direct", in: FrameworkBundle.own, compatibleWith: nil)!
     }
 
     public static func setupViewController(bluetoothProvider: BluetoothProvider, displayGlucoseUnitObservable: DisplayGlucoseUnitObservable, colorPalette: LoopUIColorPalette, allowDebugFeatures: Bool) -> SetupUIResult<CGMManagerViewController, CGMManagerUI> {
@@ -22,13 +28,14 @@ extension GlucoseDirectManager: CGMManagerUI {
     }
 
     public func settingsViewController(bluetoothProvider: BluetoothProvider, displayGlucoseUnitObservable: DisplayGlucoseUnitObservable, colorPalette: LoopUIColorPalette, allowDebugFeatures: Bool) -> CGMManagerViewController {
-        let settings = GlucoseDirectSettingsViewController(cgmManager: self, glucoseUnit: displayGlucoseUnitObservable)
+        let settings = GlucoseDirectSettingsViewController(cgmManager: self, displayGlucoseUnitObservable: displayGlucoseUnitObservable)
         let nav = CGMManagerSettingsNavigationViewController(rootViewController: settings)
+
         return nav
     }
 
     public var smallImage: UIImage? {
-        return UIImage(named: "glucose-direct", in: Bundle(for: GlucoseDirectSettingsViewController.self), compatibleWith: nil)!
+        return UIImage(named: "glucose-direct", in: FrameworkBundle.own, compatibleWith: nil)!
     }
 
     // TODO: Placeholder.

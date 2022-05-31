@@ -11,17 +11,15 @@
 		06E10A192360DBCE009B6FED /* GlucoseDirectClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F61399234F3066003FB95D /* GlucoseDirectClient.framework */; platformFilter = ios; };
 		384D8F1123608C8100B1DD29 /* LoopKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38E30FD02358C29700DAB3A0 /* LoopKitUI.framework */; platformFilter = ios; };
 		38589848235DA80E00919FD4 /* GlucoseDirectManager+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38589847235DA80E00919FD4 /* GlucoseDirectManager+UI.swift */; };
-		38589852235E035D00919FD4 /* GlucoseDirectSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38589851235E035D00919FD4 /* GlucoseDirectSettingsViewController.swift */; };
 		3858985F235E07CC00919FD4 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F613BD234F3E83003FB95D /* LocalizedString.swift */; };
 		38589860235E07D500919FD4 /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FA78D22350C80600780D61 /* TimeInterval.swift */; };
 		3897846124290961008AD57A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3897846324290961008AD57A /* Localizable.strings */; };
 		38B66F7023C4B96A009594BB /* DispatchTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B66F6F23C4B96A009594BB /* DispatchTimer.swift */; };
-		38D2F4FD235A12AD004FFE14 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D2F4FC235A12AD004FFE14 /* SettingsView.swift */; };
+		38D2F4FD235A12AD004FFE14 /* GlucoseDirectSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D2F4FC235A12AD004FFE14 /* GlucoseDirectSettingsViewController.swift */; };
 		38E30FC52358C25100DAB3A0 /* GlucoseDirectClientUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 38E30FB72358C25000DAB3A0 /* GlucoseDirectClientUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		38F613AA234F3067003FB95D /* GlucoseDirectClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 38F6139C234F3066003FB95D /* GlucoseDirectClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		38F613B7234F333C003FB95D /* LoopKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F613B6234F333C003FB95D /* LoopKit.framework */; platformFilter = ios; };
 		38F613B9234F33B1003FB95D /* GlucoseDirectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F613B8234F33B1003FB95D /* GlucoseDirectManager.swift */; };
-		38F613BB234F3AD1003FB95D /* BloodGlucose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F613BA234F3AD1003FB95D /* BloodGlucose.swift */; };
 		38F613BE234F3E83003FB95D /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F613BD234F3E83003FB95D /* LocalizedString.swift */; };
 		38F613C2234F7FB9003FB95D /* GlucoseDirectClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F613C1234F7FB9003FB95D /* GlucoseDirectClient.swift */; };
 		38FA78D32350C80600780D61 /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FA78D22350C80600780D61 /* TimeInterval.swift */; };
@@ -61,11 +59,10 @@
 		384D8F0A23608A4400B1DD29 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS6.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		384D8F0D23608BEA00B1DD29 /* LoopKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LoopKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38589847235DA80E00919FD4 /* GlucoseDirectManager+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GlucoseDirectManager+UI.swift"; sourceTree = "<group>"; };
-		38589851235E035D00919FD4 /* GlucoseDirectSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseDirectSettingsViewController.swift; sourceTree = "<group>"; };
 		38589853235E051500919FD4 /* LoopUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LoopUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3897846224290961008AD57A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		38B66F6F23C4B96A009594BB /* DispatchTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchTimer.swift; sourceTree = "<group>"; };
-		38D2F4FC235A12AD004FFE14 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		38D2F4FC235A12AD004FFE14 /* GlucoseDirectSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseDirectSettingsViewController.swift; sourceTree = "<group>"; };
 		38E30FB52358C25000DAB3A0 /* GlucoseDirectClientUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GlucoseDirectClientUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38E30FB72358C25000DAB3A0 /* GlucoseDirectClientUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlucoseDirectClientUI.h; sourceTree = "<group>"; };
 		38E30FB82358C25000DAB3A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,7 +74,6 @@
 		38F613B3234F313A003FB95D /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		38F613B6234F333C003FB95D /* LoopKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LoopKit.framework; path = Carthage/Build/iOS/LoopKit.framework; sourceTree = "<group>"; };
 		38F613B8234F33B1003FB95D /* GlucoseDirectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseDirectManager.swift; sourceTree = "<group>"; };
-		38F613BA234F3AD1003FB95D /* BloodGlucose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodGlucose.swift; sourceTree = "<group>"; };
 		38F613BD234F3E83003FB95D /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
 		38F613C1234F7FB9003FB95D /* GlucoseDirectClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseDirectClient.swift; sourceTree = "<group>"; };
 		38FA78D22350C80600780D61 /* TimeInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
@@ -125,9 +121,8 @@
 			children = (
 				38E30FB82358C25000DAB3A0 /* Info.plist */,
 				38E30FB72358C25000DAB3A0 /* GlucoseDirectClientUI.h */,
-				38D2F4FC235A12AD004FFE14 /* SettingsView.swift */,
 				38589847235DA80E00919FD4 /* GlucoseDirectManager+UI.swift */,
-				38589851235E035D00919FD4 /* GlucoseDirectSettingsViewController.swift */,
+				38D2F4FC235A12AD004FFE14 /* GlucoseDirectSettingsViewController.swift */,
 				3897846324290961008AD57A /* Localizable.strings */,
 				A901264E26D95DFB0081BAD1 /* Assets.xcassets */,
 			);
@@ -137,12 +132,12 @@
 		38F6138F234F3066003FB95D = {
 			isa = PBXGroup;
 			children = (
-				A9BAC74226CDBB60001C9493 /* Extensions */,
 				38F613B3234F313A003FB95D /* Cartfile */,
 				38F613BC234F3E47003FB95D /* Common */,
 				38F6139B234F3066003FB95D /* GlucoseDirectClient */,
 				38E30FB62358C25000DAB3A0 /* GlucoseDirectClientUI */,
 				A9BAC72826CDB7A5001C9493 /* GlucoseDirectClientPlugin */,
+				A9BAC74226CDBB60001C9493 /* Extensions */,
 				38F6139A234F3066003FB95D /* Products */,
 				38F613B5234F3315003FB95D /* Frameworks */,
 			);
@@ -163,7 +158,6 @@
 			children = (
 				38F6139D234F3066003FB95D /* Info.plist */,
 				38F6139C234F3066003FB95D /* GlucoseDirectClient.h */,
-				38F613BA234F3AD1003FB95D /* BloodGlucose.swift */,
 				38F613B8234F33B1003FB95D /* GlucoseDirectManager.swift */,
 				38F613C1234F7FB9003FB95D /* GlucoseDirectClient.swift */,
 			);
@@ -407,8 +401,7 @@
 				38589848235DA80E00919FD4 /* GlucoseDirectManager+UI.swift in Sources */,
 				A9BAC74926CDC3CD001C9493 /* OSLog.swift in Sources */,
 				3858985F235E07CC00919FD4 /* LocalizedString.swift in Sources */,
-				38589852235E035D00919FD4 /* GlucoseDirectSettingsViewController.swift in Sources */,
-				38D2F4FD235A12AD004FFE14 /* SettingsView.swift in Sources */,
+				38D2F4FD235A12AD004FFE14 /* GlucoseDirectSettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,7 +411,6 @@
 			files = (
 				38FA78D32350C80600780D61 /* TimeInterval.swift in Sources */,
 				38F613B9234F33B1003FB95D /* GlucoseDirectManager.swift in Sources */,
-				38F613BB234F3AD1003FB95D /* BloodGlucose.swift in Sources */,
 				38B66F7023C4B96A009594BB /* DispatchTimer.swift in Sources */,
 				38F613C2234F7FB9003FB95D /* GlucoseDirectClient.swift in Sources */,
 				38F613BE234F3E83003FB95D /* LocalizedString.swift in Sources */,
@@ -487,6 +479,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "name.9JNYW2DG9D.libre-direct-client-ui";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -516,6 +509,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "name.9JNYW2DG9D.libre-direct-client-ui";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -670,6 +664,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "name.9JNYW2DG9D.libre-direct-client";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -701,6 +696,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "name.9JNYW2DG9D.libre-direct-client";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -730,6 +726,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "name.9JNYW2DG9D.libre-direct-client-plugin";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -761,6 +758,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "name.9JNYW2DG9D.libre-direct-client-plugin";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
