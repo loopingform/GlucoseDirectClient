@@ -48,11 +48,7 @@ public class GlucoseDirectSettingsViewController: UITableViewController {
     }
 
     override public func numberOfSections(in tableView: UITableView) -> Int {
-        if cgmManager.transmitter != nil || cgmManager.transmitterBattery != nil || cgmManager.transmitterHardware != nil || cgmManager.transmitterFirmware != nil {
-            return Section.allCases.count
-        }
-
-        return Section.allCases.count - 1
+        return Section.allCases.count
     }
 
     override public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -68,8 +64,11 @@ public class GlucoseDirectSettingsViewController: UITableViewController {
             return 1
 
         case .transmitter:
-            return TransmitterSection.allCases.count
+            if cgmManager.transmitter != nil || cgmManager.transmitterBattery != nil || cgmManager.transmitterHardware != nil || cgmManager.transmitterFirmware != nil {
+                return TransmitterSection.allCases.count
+            }
 
+            return 1
         case .sensor:
             return SensorSection.allCases.count
         }
@@ -84,7 +83,11 @@ public class GlucoseDirectSettingsViewController: UITableViewController {
             return LocalizedString("Latest reading")
 
         case .transmitter:
-            return LocalizedString("Transmitter")
+            if cgmManager.transmitter != nil || cgmManager.transmitterBattery != nil || cgmManager.transmitterHardware != nil || cgmManager.transmitterFirmware != nil {
+                return LocalizedString("Transmitter")
+            }
+
+            return nil
 
         case .sensor:
             return LocalizedString("Sensor")
@@ -134,29 +137,36 @@ public class GlucoseDirectSettingsViewController: UITableViewController {
             }
 
         case .transmitter:
-            switch TransmitterSection(rawValue: indexPath.row)! {
-            case .model:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "value", for: indexPath) as! ValueStyleCell
-                cell.textLabel?.text = LocalizedString("Transmitter model")
-                cell.detailTextLabel?.text = cgmManager.transmitter ?? "-"
+            if cgmManager.transmitter != nil || cgmManager.transmitterBattery != nil || cgmManager.transmitterHardware != nil || cgmManager.transmitterFirmware != nil {
+                switch TransmitterSection(rawValue: indexPath.row)! {
+                case .model:
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "value", for: indexPath) as! ValueStyleCell
+                    cell.textLabel?.text = LocalizedString("Transmitter model")
+                    cell.detailTextLabel?.text = cgmManager.transmitter ?? "-"
 
-                return cell
-            case .battery:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "value", for: indexPath) as! ValueStyleCell
-                cell.textLabel?.text = LocalizedString("Transmitter battery")
-                cell.detailTextLabel?.text = cgmManager.transmitterBattery ?? "-"
+                    return cell
+                case .battery:
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "value", for: indexPath) as! ValueStyleCell
+                    cell.textLabel?.text = LocalizedString("Transmitter battery")
+                    cell.detailTextLabel?.text = cgmManager.transmitterBattery ?? "-"
 
-                return cell
-            case .hardware:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "value", for: indexPath) as! ValueStyleCell
-                cell.textLabel?.text = LocalizedString("Transmitter hardware")
-                cell.detailTextLabel?.text = cgmManager.transmitterHardware ?? "-"
+                    return cell
+                case .hardware:
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "value", for: indexPath) as! ValueStyleCell
+                    cell.textLabel?.text = LocalizedString("Transmitter hardware")
+                    cell.detailTextLabel?.text = cgmManager.transmitterHardware ?? "-"
 
-                return cell
-            case .firmware:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "value", for: indexPath) as! ValueStyleCell
-                cell.textLabel?.text = LocalizedString("Transmitter firmware")
-                cell.detailTextLabel?.text = cgmManager.transmitterFirmware ?? "-"
+                    return cell
+                case .firmware:
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "value", for: indexPath) as! ValueStyleCell
+                    cell.textLabel?.text = LocalizedString("Transmitter firmware")
+                    cell.detailTextLabel?.text = cgmManager.transmitterFirmware ?? "-"
+
+                    return cell
+                }
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "text", for: indexPath)
+                cell.textLabel?.text = LocalizedString("No transmitter in use")
 
                 return cell
             }
@@ -194,10 +204,10 @@ public class GlucoseDirectSettingsViewController: UITableViewController {
     // MARK: Private
 
     private enum Section: Int, CaseIterable {
-        case latestReading = 0
-        case sensor = 1
-        case transmitter = 3
-        case appInfo = 2
+        case latestReading
+        case sensor
+        case transmitter
+        case appInfo
     }
 
     private enum AppInfoSection: Int, CaseIterable {
