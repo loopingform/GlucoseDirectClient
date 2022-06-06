@@ -19,21 +19,9 @@ class GlucoseDirectClient {
 
     // MARK: Internal
 
-    func fetchLast(_ n: Int) -> AnyPublisher<[ClientGlucose], Swift.Error> {
-        sharedDefaults.publisher
-            .retry(2)
-            .tryMap { try self.fetchLastBGs(n, $0) }
-            .map { $0.filter { $0.isStateValid } }
-            .eraseToAnyPublisher()
-    }
-
-    // MARK: Private
-
-    private let sharedDefaults: UserDefaults?
-
-    private func fetchLastBGs(_ n: Int, _ sharedParm: UserDefaults?) throws -> [ClientGlucose] {
+    func fetchLast(_ n: Int) throws -> [ClientGlucose] {
         do {
-            guard let sharedData = sharedParm?.data(forKey: "latestReadings") else {
+            guard let sharedData = sharedDefaults?.data(forKey: "latestReadings") else {
                 throw ClientError.fetchError
             }
 
@@ -51,7 +39,7 @@ class GlucoseDirectClient {
                 }
 
                 if let glucose = sgv["Value"] as? Int, let trend = sgv["Trend"] as? Int, let dt = sgv["DT"] as? String {
-                    // only add glucose readings in a valid range - skip unrealistically low or high readings
+                    // only add glucose readings in a valid range - skip unrealistically low or high readings, isStateValid: <#Bool#>
                     // this does also prevent negative glucose values from being cast to UInt16
                     transformed.append(ClientGlucose(sgv: glucose, trend: trend, date: try parseDate(dt), filtered: nil, noise: nil))
                 } else {
@@ -66,6 +54,10 @@ class GlucoseDirectClient {
             throw ClientError.fetchError
         }
     }
+
+    // MARK: Private
+
+    private let sharedDefaults: UserDefaults?
 
     private func parseDate(_ wt: String) throws -> Date {
         // wt looks like "/Date(1462404576000)/"
@@ -97,7 +89,7 @@ public enum ClientError: Error {
 // MARK: - ClientGlucose
 
 public struct ClientGlucose: Codable {
-    public var sgv: Int?
+    public let sgv: Int?
     public let trend: Int
     public let date: Date
     public let filtered: Double?
@@ -109,6 +101,7 @@ public struct ClientGlucose: Codable {
 // MARK: GlucoseValue
 
 extension ClientGlucose: GlucoseValue {
+    public var isStateValid: Bool { true }
     public var startDate: Date { date }
     public var quantity: HKQuantity { .init(unit: .milligramsPerDeciliter, doubleValue: Double(glucose)) }
 }
@@ -116,7 +109,6 @@ extension ClientGlucose: GlucoseValue {
 // MARK: GlucoseDisplayable
 
 extension ClientGlucose: GlucoseDisplayable {
-    public var isStateValid: Bool { glucose > 39 && glucose < 501 }
     public var trendType: GlucoseTrend? { GlucoseTrend(rawValue: trend) }
     public var isLocal: Bool { false }
 

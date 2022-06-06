@@ -18,13 +18,10 @@ public class GlucoseDirectManager: CGMManager {
     public init() {
         sharedDefaults = UserDefaults(suiteName: Bundle.main.appGroupSuiteName)
         client = GlucoseDirectClient(sharedDefaults)
-        updateTimer = DispatchTimer(timeInterval: 10, queue: processQueue)
-        scheduleUpdateTimer()
     }
 
     public required convenience init?(rawState: CGMManager.RawStateValue) {
         self.init()
-
         shouldSyncToRemoteService = rawState[Config.shouldSyncKey] as? Bool ?? false
     }
 
@@ -56,7 +53,7 @@ public class GlucoseDirectManager: CGMManager {
     public var app: String? {
         sharedDefaults?.string(forKey: "glucosedirect--app")
     }
-    
+
     public var appVersion: String? {
         sharedDefaults?.string(forKey: "glucosedirect--app-version")
     }
@@ -137,7 +134,7 @@ public class GlucoseDirectManager: CGMManager {
 
     public func fetchNewDataIfNeeded(_ completion: @escaping (CGMReadingResult) -> Void) {
         processQueue.async {
-            guard let manager = self.client, !self.isFetching else {
+            guard let client = self.client else {
                 self.delegateQueue.async {
                     completion(.noData)
                 }
@@ -154,55 +151,48 @@ public class GlucoseDirectManager: CGMManager {
                 return
             }
 
-            self.isFetching = true
-            self.requestReceiver = manager.fetchLast(60)
-                .sink(receiveCompletion: { finish in
-                    switch finish {
-                    case .finished: break
-                    case let .failure(error):
-                        self.delegateQueue.async {
-                            completion(.error(error))
-                        }
-                    }
-                    self.isFetching = false
-                }, receiveValue: { [weak self] glucose in
-                    guard let self = self else {
-                        return
-                    }
-                    guard !glucose.isEmpty else {
-                        self.delegateQueue.async {
-                            completion(.noData)
-                        }
-                        return
-                    }
-
-                    var startDate: Date?
-
-                    if let latestGlucose = self.latestGlucose {
-                        startDate = latestGlucose.startDate
-                    } else {
-                        startDate = self.delegate.call { delegate -> Date? in
-                            delegate?.startDateToFilterNewData(for: self)
-                        }
-                    }
-
-                    let newGlucose = glucose.filterDateRange(startDate, nil)
-                    let newGlucoseSamples = newGlucose.filter { $0.isStateValid }.map {
-                        NewGlucoseSample(date: $0.startDate, quantity: $0.quantity, condition: nil, trend: $0.trendType, trendRate: $0.trendRate, isDisplayOnly: false, wasUserEntered: false, syncIdentifier: "\(Int($0.startDate.timeIntervalSince1970))", device: self.device)
-                    }
-
-                    self.latestGlucose = newGlucose.first
-                    self.latestGlucoseSample = newGlucoseSamples.first
-
+            do {
+                let fetchedGlucose = try client.fetchLast(60)
+                guard !fetchedGlucose.isEmpty else {
                     self.delegateQueue.async {
-                        guard !newGlucoseSamples.isEmpty else {
-                            completion(.noData)
-                            return
-                        }
-
-                        completion(.newData(newGlucoseSamples))
+                        completion(.noData)
                     }
-                })
+                    
+                    return
+                }
+
+                let startDate = self.delegate.call { (delegate) -> Date? in
+                    return delegate?.startDateToFilterNewData(for: self)?.addingTimeInterval(TimeInterval(seconds: 270))
+                }
+
+                let newGlucose = fetchedGlucose.filterDateRange(startDate, nil)
+                let newGlucoseSamples = newGlucose.filter { $0.isStateValid }.map {
+                    NewGlucoseSample(date: $0.startDate, quantity: $0.quantity, condition: nil, trend: $0.trendType, trendRate: $0.trendRate, isDisplayOnly: false, wasUserEntered: false, syncIdentifier: "\(Int($0.startDate.timeIntervalSince1970))", device: self.device)
+                }
+                
+                guard !newGlucoseSamples.isEmpty else {
+                    self.delegateQueue.async {
+                        completion(.noData)
+                    }
+                    
+                    return
+                }
+
+                self.latestGlucose = newGlucose.first
+                self.latestGlucoseSample = newGlucoseSamples.first
+                
+                self.delegateQueue.async {
+                    completion(.newData(newGlucoseSamples))
+                }
+            } catch let error as ClientError {
+                self.delegateQueue.async {
+                    completion(.error(error))
+                }
+            } catch {
+                self.delegateQueue.async {
+                    completion(.error(ClientError.fetchError))
+                }
+            }
         }
     }
 
@@ -213,31 +203,8 @@ public class GlucoseDirectManager: CGMManager {
     }
 
     private var client: GlucoseDirectClient?
-    private var requestReceiver: Cancellable?
     private let processQueue = DispatchQueue(label: "GlucoseDirectManager.processQueue")
-    private var isFetching = false
-    private let updateTimer: DispatchTimer
     private let sharedDefaults: UserDefaults?
-
-    private func scheduleUpdateTimer() {
-        updateTimer.suspend()
-        updateTimer.eventHandler = { [weak self] in
-            guard let self = self else {
-                return
-            }
-
-            self.fetchNewDataIfNeeded { result in
-                guard case .newData = result else {
-                    return
-                }
-
-                self.delegate.notify { delegate in
-                    delegate?.cgmManager(self, hasNew: result)
-                }
-            }
-        }
-        updateTimer.resume()
-    }
 }
 
 public extension GlucoseDirectManager {
