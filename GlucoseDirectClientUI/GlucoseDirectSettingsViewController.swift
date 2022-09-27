@@ -6,7 +6,6 @@
 import Combine
 import GlucoseDirectClient
 import HealthKit
-import LoopCore
 import LoopKit
 import LoopKitUI
 
