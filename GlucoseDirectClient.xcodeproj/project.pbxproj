@@ -29,6 +29,10 @@
 		A9BAC74626CDC3AA001C9493 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BAC74526CDC3AA001C9493 /* Bundle.swift */; };
 		A9BAC74926CDC3CD001C9493 /* OSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BAC74726CDC3B3001C9493 /* OSLog.swift */; };
 		A9BAC74A26CDC565001C9493 /* OSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BAC74726CDC3B3001C9493 /* OSLog.swift */; };
+		E26D45BF288C245900C234CB /* GlucoseDirectClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F61399234F3066003FB95D /* GlucoseDirectClient.framework */; platformFilter = ios; };
+		E26D45C0288C245900C234CB /* GlucoseDirectClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 38F61399234F3066003FB95D /* GlucoseDirectClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E26D45C3288C245900C234CB /* GlucoseDirectClientUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38E30FB52358C25000DAB3A0 /* GlucoseDirectClientUI.framework */; platformFilter = ios; };
+		E26D45C4288C245900C234CB /* GlucoseDirectClientUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 38E30FB52358C25000DAB3A0 /* GlucoseDirectClientUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +57,36 @@
 			remoteGlobalIDString = 38E30FB42358C25000DAB3A0;
 			remoteInfo = GlucoseDirectClientUI;
 		};
+		E26D45C1288C245900C234CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38F61390234F3066003FB95D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 38F61398234F3066003FB95D;
+			remoteInfo = GlucoseDirectClient;
+		};
+		E26D45C5288C245900C234CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38F61390234F3066003FB95D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 38E30FB42358C25000DAB3A0;
+			remoteInfo = GlucoseDirectClientUI;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E26D45C7288C245900C234CB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E26D45C0288C245900C234CB /* GlucoseDirectClient.framework in Embed Frameworks */,
+				E26D45C4288C245900C234CB /* GlucoseDirectClientUI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		384D8F0A23608A4400B1DD29 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS6.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -71,7 +104,6 @@
 		38F61399234F3066003FB95D /* GlucoseDirectClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GlucoseDirectClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F6139C234F3066003FB95D /* GlucoseDirectClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlucoseDirectClient.h; sourceTree = "<group>"; };
 		38F6139D234F3066003FB95D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		38F613B3234F313A003FB95D /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		38F613B6234F333C003FB95D /* LoopKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LoopKit.framework; path = Carthage/Build/iOS/LoopKit.framework; sourceTree = "<group>"; };
 		38F613B8234F33B1003FB95D /* GlucoseDirectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseDirectManager.swift; sourceTree = "<group>"; };
 		38F613BD234F3E83003FB95D /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
@@ -110,6 +142,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E26D45BF288C245900C234CB /* GlucoseDirectClient.framework in Frameworks */,
+				E26D45C3288C245900C234CB /* GlucoseDirectClientUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,7 +166,6 @@
 		38F6138F234F3066003FB95D = {
 			isa = PBXGroup;
 			children = (
-				38F613B3234F313A003FB95D /* Cartfile */,
 				38F613BC234F3E47003FB95D /* Common */,
 				38F6139B234F3066003FB95D /* GlucoseDirectClient */,
 				38E30FB62358C25000DAB3A0 /* GlucoseDirectClientUI */,
@@ -284,13 +317,15 @@
 				A9BAC72326CDB7A5001C9493 /* Sources */,
 				A9BAC72426CDB7A5001C9493 /* Frameworks */,
 				A9BAC72526CDB7A5001C9493 /* Resources */,
-				A901264D26D91B820081BAD1 /* Copy Frameworks with Carthage */,
+				E26D45C7288C245900C234CB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				A9BAC73F26CDB821001C9493 /* PBXTargetDependency */,
 				A9BAC74126CDB821001C9493 /* PBXTargetDependency */,
+				E26D45C2288C245900C234CB /* PBXTargetDependency */,
+				E26D45C6288C245900C234CB /* PBXTargetDependency */,
 			);
 			name = GlucoseDirectClientPlugin;
 			productName = GlucoseDirectClientPlugin;
@@ -369,29 +404,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		A901264D26D91B820081BAD1 /* Copy Frameworks with Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/GlucoseDirectClient.framework",
-				"$(BUILT_PRODUCTS_DIR)/GlucoseDirectClientUI.framework",
-			);
-			name = "Copy Frameworks with Carthage";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "${SRCROOT}/Scripts/copy-frameworks.sh\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		38E30FB12358C25000DAB3A0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -445,6 +457,18 @@
 			isa = PBXTargetDependency;
 			target = 38E30FB42358C25000DAB3A0 /* GlucoseDirectClientUI */;
 			targetProxy = A9BAC74026CDB821001C9493 /* PBXContainerItemProxy */;
+		};
+		E26D45C2288C245900C234CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 38F61398234F3066003FB95D /* GlucoseDirectClient */;
+			targetProxy = E26D45C1288C245900C234CB /* PBXContainerItemProxy */;
+		};
+		E26D45C6288C245900C234CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 38E30FB42358C25000DAB3A0 /* GlucoseDirectClientUI */;
+			targetProxy = E26D45C5288C245900C234CB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
