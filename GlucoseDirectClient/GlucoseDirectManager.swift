@@ -27,6 +27,7 @@ public class GlucoseDirectManager: CGMManager {
 
     // MARK: Public
 
+    public static let pluginIdentifier = "GlucoseDirectClient"
     public static let managerIdentifier = "GlucoseDirectClient"
     public static let localizedTitle = LocalizedString("Glucose Direct Client")
 
